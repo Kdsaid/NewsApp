@@ -1,0 +1,17 @@
+package com.example.newapp.domain.countries
+
+import com.example.newapp.data.local.Country
+import com.example.newapp.di.DefaultDispatcher
+import com.example.newapp.domain.SuspendUseCase
+import kotlinx.coroutines.CoroutineDispatcher
+import javax.inject.Inject
+
+
+class LoadCountriesRepositoryUseCase @Inject constructor(
+    @DefaultDispatcher private val dispatcher: CoroutineDispatcher,
+    private val countriesRepository: CountriesRepository,
+) : SuspendUseCase<Unit, List<Country>>(dispatcher) {
+    override suspend fun execute(i: Unit): List<Country> {
+        return countriesRepository.getCountries()
+    }
+}
