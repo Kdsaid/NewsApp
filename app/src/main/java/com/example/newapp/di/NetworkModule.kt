@@ -1,5 +1,7 @@
 package com.example.newapp.di
 
+import com.example.newapp.BuildConfig.NEWS_BASE_URL
+import com.example.newapp.common.ProviderOkHttpClient.providerOkHttpClient
 import com.example.newapp.data.api.NewsApi
 import dagger.Module
 import dagger.Provides
@@ -16,8 +18,8 @@ object NetworkModule {
     @Provides
     fun provideApiService(): NewsApi {
         return Retrofit.Builder()
-            .baseUrl("")
-            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(NEWS_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create()).client(providerOkHttpClient())
             .build()
             .create(NewsApi::class.java)
     }

@@ -4,12 +4,12 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import java.net.SocketTimeoutException
 
-abstract class SuspendUseCase<in I, out O>(private val dispatcher: CoroutineDispatcher) {
+abstract class SuspendUseCase<in I, T, out O>(private val dispatcher: CoroutineDispatcher) {
 
-    suspend operator fun invoke(i: I): Result<O> {
+    suspend operator fun invoke(i: I, t: T): Result<O> {
         return try {
             withContext(dispatcher) {
-                val res = execute(i)
+                val res = execute(i, t)
                 Result.success(res)
             }
         } catch (e: Exception) {
@@ -22,5 +22,5 @@ abstract class SuspendUseCase<in I, out O>(private val dispatcher: CoroutineDisp
         }
     }
 
-    abstract suspend fun execute(i: I): O
+    abstract suspend fun execute(i: I, t: T): O
 }

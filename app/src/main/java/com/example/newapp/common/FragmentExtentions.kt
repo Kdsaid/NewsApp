@@ -1,4 +1,4 @@
-package com.example.newapp.presentation.common
+package com.example.newapp.common
 
 import android.view.View
 import androidx.fragment.app.Fragment

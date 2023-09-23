@@ -2,8 +2,10 @@ package com.example.newapp.di
 
 import com.example.newapp.data.repository.CategoriesRepositoryImpl
 import com.example.newapp.data.repository.CountriesRepositoryImpl
+import com.example.newapp.data.repository.HeadLinesRepositoryImpl
 import com.example.newapp.domain.categories.CategoriesRepository
 import com.example.newapp.domain.countries.CountriesRepository
+import com.example.newapp.domain.home.HeadLinesRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -22,5 +24,10 @@ abstract class RepoModule {
     abstract fun provideCategoriesRepository(
         categoriesRepositoryImpl: CategoriesRepositoryImpl
     ): CategoriesRepository
+
+    @Binds
+    abstract fun provideHeadLinesRepository(
+        headLinesRepositoryImpl: HeadLinesRepositoryImpl
+    ): HeadLinesRepository
 
 }

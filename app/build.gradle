@@ -17,14 +17,18 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "API_KEY", "\"f485c069a5cc4d3b8e390219e1218665\""
+        buildConfigField "String", "NEWS_BASE_URL", "\"https://newsapi.org/v2/\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -86,6 +90,7 @@ dependencies {
     //  support screen sizes
     implementation "com.intuit.sdp:sdp-android:$sdp_version"
     implementation "com.intuit.ssp:ssp-android:$sdp_version"
+    implementation "com.github.chuckerteam.chucker:library:4.0.0"
 
 
 }

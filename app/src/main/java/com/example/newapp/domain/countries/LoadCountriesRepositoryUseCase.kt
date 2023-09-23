@@ -10,8 +10,8 @@ import javax.inject.Inject
 class LoadCountriesRepositoryUseCase @Inject constructor(
     @DefaultDispatcher private val dispatcher: CoroutineDispatcher,
     private val countriesRepository: CountriesRepository,
-) : SuspendUseCase<Unit, List<Country>>(dispatcher) {
-    override suspend fun execute(i: Unit): List<Country> {
+) : SuspendUseCase<Unit, Unit, List<Country>>(dispatcher) {
+    override suspend fun execute(i: Unit, t: Unit): List<Country> {
         return countriesRepository.getCountries()
     }
 }

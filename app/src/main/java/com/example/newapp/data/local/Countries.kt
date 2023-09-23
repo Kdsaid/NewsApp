@@ -1,6 +1,6 @@
 package com.example.newapp.data.local
 
-import com.example.newapp.presentation.common.localValue
+import com.example.newapp.common.localValue
 
 data class Country(
     val code: String,

@@ -1,18 +1,5 @@
 package com.example.newapp.data.local
 
-import com.example.newapp.presentation.common.localValue
-
-data class Category(
-    val code: String,
-    val arabicName: String,
-    val englishName: String,
-    val isFollowed: Boolean = false,
-
-    ) {
-    val categoryName: String
-        get() = localValue(arabicName, englishName)
-}
-
 
 val categories by lazy {
     ArrayList<Category>()

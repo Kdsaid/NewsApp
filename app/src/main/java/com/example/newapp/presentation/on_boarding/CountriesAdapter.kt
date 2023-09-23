@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import com.example.newapp.R
+import com.example.newapp.common.CustomRecyclerViewAdapter
 import com.example.newapp.data.local.Country
 import com.example.newapp.databinding.CountryListItemBinding
-import com.example.newapp.presentation.common.CustomRecyclerViewAdapter
 
 class CountriesAdapter(
     private val itemClick: (String) -> Unit,
 ) : CustomRecyclerViewAdapter<Country>() {
-    private var selectedItemPosition = -1
+    private var selectedItemPosition = 0
     override fun createBinding(parent: ViewGroup, viewType: Int): ViewBinding {
         return CountryListItemBinding.bind(
             LayoutInflater.from(parent.context)

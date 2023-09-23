@@ -1,4 +1,4 @@
-package com.example.newapp.presentation.common
+package com.example.newapp.common
 
 
 import android.annotation.SuppressLint
