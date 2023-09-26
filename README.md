@@ -2,7 +2,7 @@ News App
 
 Locate articles and breaking news headlines from news sources and blogs across the web
 APK File
-https://drive.google.com/file/d/1FPIZkJYYdHCuW-Mqe4yxqBp6tOQUppV_/view?usp=sharing
+https://drive.google.com/file/d/1RHWSfi77XmiU79mdHf9gT3i1ICN_0jDx/view?usp=sharing
 
 Features
 
